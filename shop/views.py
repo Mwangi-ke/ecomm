@@ -2,29 +2,31 @@ from django.shortcuts import render
 from .models import Category, Product
 
 
+'''
+    # Get or create appliances category
+    appliances_category, created = Category.objects.get_or_create(name='switches', photo=None)
 
-
-
+    # Check if air fryer already exists before creating it
+    air_fryer, created = Product.objects.get_or_create(
+        name='1gang 1way switch',
+        brand='HIMEL'
+        category=appliances_category,
+        defaults={
+            'photo': '1g 1w.jpg',
+            'price': 2000,
+            'details': ' HWDPS1G1W  1 gang 1 way switch',
+            'is_draft': False,
+            'inventory': 625
+        }
+    )
+'''
 
 def shop_page(request):
     category = Category.objects.all()
     products = Product.objects.filter(is_draft=False)
 
-    # Get or create appliances category
-    appliances_category, created = Category.objects.get_or_create(name='appliances', photo=None)
 
-    # Check if air fryer already exists before creating it
-    air_fryer, created = Product.objects.get_or_create(
-        name='air_fryer',
-        category=appliances_category,
-        defaults={
-            'photo': 'bg6.jpg',
-            'price': 20000,
-            'details': '100w fryer',
-            'is_draft': False,
-            'inventory': 70
-        }
-    )
+    
 
     context = {
         'category': category,

@@ -13,6 +13,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
+    brand=models.TextField(default = '')
     photo = models.ImageField(upload_to='products')
     price = models.IntegerField()
     details = models.TextField()

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="hero-wrap hero-bread" style="background-image: url({% static 'images/bg_1.jpg' %});">
+    <div class="hero-wrap hero-bread" style="background-image: url({% static 'images/bg8.jpg' %});">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -17,11 +17,14 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="{{ product.photo.url }}" class="image-popup"><img src="{{ product.photo.url }}" class="img-fluid" alt="Colorlib Template"></a>
+    				<a href="{{ product.photo.url }}" class="image-popup"><img src="{{ product.photo.url}}" class="img-fluid" alt="Colorlib Template"></a>
     			</div>
     			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-    				<h3>{{ product.name }}</h3>
+    				<h3>{{ product.name }}
+						<p> {{ product.brand }}</p>
+					</h3>
     				<div class="rating d-flex">
+						
 							<p class="text-left mr-4">
 								<a href="#" class="mr-2">5.0</a>
 								<a href="#"><span class="ion-ios-star-outline"></span></a>
@@ -69,7 +72,7 @@
 	          	</div>
 	          	<div class="w-100"></div>
 	          	<div class="col-md-12">
-	          		<p style="color: #000;">600 kg available</p>
+	          		<p style="color: #000;">{{ product.inventory }} pcs</p>
 	          	</div>
           	</div>
           	<p><a href="{% url 'cart' %}" class="btn btn-black py-3 px-5">Add to Cart</a></p>
