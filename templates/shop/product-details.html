@@ -20,8 +20,8 @@
     				<a href="{{ product.photo.url }}" class="image-popup"><img src="{{ product.photo.url}}" class="img-fluid" alt="Colorlib Template"></a>
     			</div>
     			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-    				<h3>{{ product.name }}
-						<p> {{ product.brand }}</p>
+    				<h3>NAME:  {{ product.name }}
+						<p>BRAND:  {{ product.brand }}</p>
 					</h3>
     				<div class="rating d-flex">
 						
@@ -40,7 +40,7 @@
 								<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
 							</p>
 						</div>
-    				<p class="price"><span>${{ product.price }}</span></p>
+    				<p class="price"><span>KES {{ product.price }}</span></p>
     				<p>{{ product.details }}</p>
 						<div class="row mt-4">
 							<div class="col-md-6">
@@ -75,7 +75,7 @@
 	          		<p style="color: #000;">{{ product.inventory }} pcs</p>
 	          	</div>
           	</div>
-          	<p><a href="{% url 'cart' %}" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+          	<p><a href="{% url 'cart' %}" class="btn btn-black py-3 px-5" data-product-id="{{ product.id }}">Add to Cart</a></p>
     			</div>
     		</div>
     	</div>

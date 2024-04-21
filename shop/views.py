@@ -4,32 +4,43 @@ from .models import Category, Product
 
 '''
     # Get or create appliances category
-    appliances_category, created = Category.objects.get_or_create(name='switches', photo=None)
+    appliances_category, created = Category.objects.get_or_create(name='Garment Care', photo=None)
 
     # Check if air fryer already exists before creating it
     air_fryer, created = Product.objects.get_or_create(
-        name='1gang 1way switch',
-        brand='HIMEL'
+        name='STEAM IRON',
+        brand='PHILIPS',
         category=appliances_category,
         defaults={
-            'photo': '1g 1w.jpg',
-            'price': 2000,
-            'details': ' HWDPS1G1W  1 gang 1 way switch',
+            'photo': 'bg20.jpg',
+            'price': 18540,
+            'details': 'LED FLOODLIGHT 50W LED43/CW 4300 LUMEN GREY',
             'is_draft': False,
-            'inventory': 625
+            'inventory': 125
         }
     )
+
+
+    j=Product.objects.filter(id=)
+    j.delete()
+
 '''
 
 def shop_page(request):
-    category = Category.objects.all()
+
     products = Product.objects.filter(is_draft=False)
+    categories = Category.objects.all()
+    unique_category_names = []
+    for category in categories:
+        if category not in unique_category_names:
+            unique_category_names.append(category.name)
 
 
-    
+
 
     context = {
-        'category': category,
+        'unique_category_names': set(unique_category_names),
+        'categories': categories,
         'products': products
     }
     return render(request, 'shop/shop.html', context)
