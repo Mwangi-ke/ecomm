@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Category, Product
+from django.db.models import Q
+from.utils import calculate_discounted_price
 
 
 '''
@@ -38,6 +40,7 @@ def shop_page(request):
 
 
 
+
     context = {
         'unique_category_names': set(unique_category_names),
         'categories': categories,
@@ -49,7 +52,7 @@ def shop_page(request):
 
 def product_details(request, product_id):
     product_details = Product.objects.get(id=product_id)
-    related_products = Product.objects.filter(category=product_details.category)
+    related_products = Product.objects.filter(category__name=product_details.category.name).exclude(id=product_id)
     context = {
         'product': product_details,
         'related_products': related_products
@@ -57,8 +60,23 @@ def product_details(request, product_id):
     return render(request, 'shop/product-details.html', context)
 
 
+def discounted(request):
+    product_ids=[11,1,19]
+
+    products=Product.objects.filter(id__in=product_ids)
+
+    discounted_prices=[]
 
 
+    for product in products:
+        discounted_price=calculate_discounted_price(product.price,20)
+        discounted_prices.append(discounted_price)
+
+    context= {
+        'products': (products,discounted_prices)
+    }    
+
+    return render(request, 'shop/product-details.html', context)
 
 
 

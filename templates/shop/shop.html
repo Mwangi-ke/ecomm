@@ -29,9 +29,13 @@
                   </ul>
     			</div>
     		</div>
+        {% for category_name in unique_category_names %}
+    <div class="row category-row" id="{{ category_name }}">
+      <div class="col-md-12">
+        <h2>{{ category_name }}</h2>
     		<div class="row">
-          {% if products %}
           {% for product in products %}
+          {% if product.category.name == category_name %}
           <div class="col-md-6 col-lg-3 ftco-animate " >
     				<div class="product" data-category="{{ product.category.name }}">
     					<a href="{% url 'product-details' product.id %}" class="img-prod"><img class="img-fluid" src="{{ product.photo.url }}" alt="Product Photo">
@@ -66,13 +70,13 @@
     					</div>
     				</div>
     			</div>
-          {% endfor %}
-          {% else %}
-          <p>There is No Product Here!</p>
           {% endif %}
+          {% endfor %}
+
     		</div>
     		<div class="row mt-5">
           <div class="col text-center">
+            {% endfor %}  
             <div class="block-27">
               <ul>
                 <li><a href="#">&lt;</a></li>

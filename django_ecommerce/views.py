@@ -4,7 +4,7 @@ from contact.forms import SubscriberForm
 
 
 def home_page(request):
-    products = Product.objects.all()[:8]
+    products = Product.objects.all()[:12]
     forms = SubscriberForm()
     if request.method == 'POST':
         forms = SubscriberForm(request.POST)
