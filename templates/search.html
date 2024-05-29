@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Search Products</h1>
+    <form method="get" action="{% url 'search_products' %}">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    {% if products %}
+        <h2>Results</h2>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{{ product.photo.url }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">Price: KES {{ product.price }}</p>
+                            <p class="card-text">{{ product.description }}</p>
+                            <!-- Add more product details as needed -->
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No products found.</p>
+    {% endif %}
+</div>
+{% endblock %}

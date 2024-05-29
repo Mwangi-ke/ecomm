@@ -27,6 +27,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_page, name='home'),
+    path('search/',views.search,name='search'),
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('about/', include('about.urls')),
@@ -34,6 +35,7 @@ urlpatterns = [
     path('cart/', include('cart.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('account/', include('account.urls')),
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()

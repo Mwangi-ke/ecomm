@@ -24,3 +24,40 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class TV(Product):
+    screen_size = models.CharField(max_length=50)
+    resolution = models.CharField(max_length=50)
+    # Add other TV-specific fields
+
+class AudioSystem(Product):
+    type=models.CharField(max_length=50)
+
+
+class Laptop(Product):
+    kind=models.CharField(max_length=50)
+
+class Computer(Product):
+    kind=models.CharField(max_length=50)
+
+class Gadjet(Product):
+    kind=models.CharField(max_length=50)
+
+class Refrigerator(Product):
+    kind=models.CharField(max_length=50)
+
+class Washing_machine(Product):
+    kind=models.CharField(max_length=50) 
+
+class Blender(Product):
+    kind=models.CharField(max_length=50) 
+
+class Airfryer(Product):
+    kind=models.CharField(max_length=50) 
+
+class Coffee_maker(Product):
+    kind=models.CharField(max_length=50)     
+
+

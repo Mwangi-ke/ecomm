@@ -3,6 +3,49 @@
 
 {% block content %}
 <section id="home-section" class="hero">
+  <form action="{% url 'search' %}" method="get">
+    <input type="text" name="q" placeholder="Search...">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'shop' %}">Shop</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Shop</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">Wishlist</a>
+            <a class="dropdown-item" href="product-single.html">Single Product</a>
+            <a class="dropdown-item" href="{% url 'cart' %}">Cart</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+        <li class="nav-item cta cta-colored"><a href="{% url 'cart' %}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item"><a href="{% url 'signout' %}" class="nav-link">Welcome{{ user }}</a></li>
+        <li class="nav-item"><a href="{% url 'signout' %}" class="nav-link">Signout</a></li>
+        {% else %}
+        <li class="nav-item"><a href="{% url 'signin' %}" class="nav-link">Signin</a></li>
+        {% endif %}
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
   <div class="home-slider owl-carousel">
     <div class="slider-item" style="background-image: url({% static 'images/bg8.jpg' %});">
       <div class="overlay"></div>
@@ -115,61 +158,6 @@
   </div>
 </section>
 
-<section class="ftco-section ftco-category ftco-no-pt">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-6 order-md-last align-items-stretch d-flex">
-            <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url({% static 'images/bg16.jpg' %});">
-              <div class="text text-center">
-                
-                <p>Protect the health of every home</p>
-                <p><a href="{% url 'shop' %}" class="btn btn-primary">Shop now</a></p>
-                <div class="text px-3 py-1">
-                  <h2 class="mb-0"><a href="#">Luminares</a></h2>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="col-md-6">
-            <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url({% static 'images/bg2.jpg' %});">
-              <div class="text px-3 py-1">
-                <h2 class="mb-0"><a href="#">Sockets</a></h2>
-              </div>
-            </div>
-            <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url({% static 'images/bg5.jpg' %});">
-              <div class="text px-3 py-1">
-                <h2 class="mb-0"><a href="#">Switches</a></h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="col-md-4">
-        <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url({% static 'images/bg6.jpg' %});">
-          <div class="text px-3 py-1">
-            <h2 class="mb-0"><a href="#">Appliances</a></h2>
-          </div>
-        </div>
-        <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url({% static 'images/bg7.jpg' %});">
-          <div class="text px-3 py-1">
-            <h2 class="mb-0"><a href="#">Energy Distribution</a></h2>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-</section>
 
 <section class="ftco-section">
   <div class="container">
@@ -342,7 +330,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm ftco-animate">
-        <a href="#" class="partner"><img src="{% static 'images/partner-1.png' %}" class="img-fluid" alt="Colorlib Template"></a>
+        <a href="#" class="partner"><img src="{% static 'images/philips.png' %}" class="img-fluid" alt="Colorlib Template"></a>
       </div>
       <div class="col-sm ftco-animate">
         <a href="#" class="partner"><img src="{% static 'images/schneider-electric-vector-logo.jpg' %}" class="img-fluid" alt="Colorlib Template"></a>
