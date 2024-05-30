@@ -4,8 +4,9 @@ from django.db.models import Q
 from.utils import calculate_discounted_price
 from cart.views import cart_page
 from .forms import SearchForm
-from .models import Product, TV, AudioSystem, Laptop
-from .forms import ProductSearchForm
+from .models import Product, TV, AudioSystem, Laptop,Computer,Coffee_maker,Washing_machine
+from .forms import ProductSearchForm,Form
+
 
 
 
@@ -143,36 +144,42 @@ def search_products(request):
 
 
 
-from .forms import TVForm,AudioForm
-
-def add_tv(request):
+def add_item(request):
     if request.method == 'POST':
-        form = TVForm(request.POST, request.FILES)
+        form = Form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('tv_list')  # Replace with the appropriate view or URL name
+            return redirect('shop')  # Replace with the appropriate view or URL name
     else:
-        form = TVForm()
-    return render(request, 'items/add_tv.html', {'form': form})
+        form = Form()
+    return render(request, 'items/add_item.html', {'form': form})
 
 
 def tv_list(request):
-    tvs = TV.objects.all()
+    tvs = TV.objects.filter(category__name='Televisions')
     return render(request, 'items/tv_list.html', {'tvs': tvs})
 
-
-def add_audio(request):
-    if request.method == 'POST':
-        form = AudioForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('audio_list')  # Replace with the appropriate view or URL name
-    else:
-        form = AudioForm()
-    return render(request, 'items/add_audio.html', {'form': form})
-
-
 def audio_list(request):
-    audios = AudioSystem.objects.all()
+    audios = AudioSystem.objects.filter(category__name='Audio')
     return render(request, 'items/audio_list.html', {'audios': audios})
+
+def computer_list(request):
+    computers = Product.objects.filter(category__name='Computing')
+    return render(request, 'items/computer_list.html', {'computers': computers})
+
+def garmentcare_list(request):
+    garments = Product.objects.filter(category__name='Garment Care')
+    return render(request, 'items/computer_list.html', {'cares': cares})
+
+def floorcare_list(request):
+    floors = Product.objects.filter(category__name='Floor Care')
+    return render(request, 'items/computer_list.html', {'floors': floors})
+
+def kitchen(request):
+    kitchens = Product.objects.filter(category__name='Floor Care')
+    return render(request, 'items/computer_list.html', {'kitchens': kitchens})
+
+def mobile_tablets(request):
+    mbs = Product.objects.filter(category__name='Mobile&Tablets')
+    return render(request, 'items/phones&tablets.html', {'mbs': mbs})
 

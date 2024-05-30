@@ -8357,7 +8357,7 @@ h1, h2, h3, h4, h5,
         background: #b3b3b3; }
   .owl-carousel.home-slider {
     position: relative;
-    height: 500px;
+    height: 300px;
     z-index: 0; }
     .owl-carousel.home-slider .slider-item {
       background-size: cover;
@@ -8645,7 +8645,7 @@ h1, h2, h3, h4, h5,
       color: #fff; }
 
 .ftco-product .owl-carousel .owl-stage-outer {
-  padding-bottom: 2em;
+
   position: relative; }
 
 .product {
@@ -10046,12 +10046,12 @@ textarea.form-control {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 400vh; /* Adjust the height as needed */
+      height: 600px !important; /* Adjust the height as needed */
     }
     
     @media (max-width: 850px) {
       .slider-item2 {
-        height: 400vh; /* Adjust the height for smaller screens */
+        height: 400px !important; /* Adjust the height for smaller screens */
       }
     }
     

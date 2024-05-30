@@ -23,15 +23,9 @@ class ProductSearchForm(forms.Form):
     search_query = forms.CharField(max_length=255, required=False)    
 
 
-class TVForm(forms.ModelForm):
+class Form(forms.ModelForm):
     class Meta:
-        model = TV
-        fields = ['name','category','brand', 'price', 'details', 'photo', 'inventory', 'screen_size', 'resolution']
-
-
-class AudioForm(forms.ModelForm):
-    class Meta:
-        model = AudioSystem
-        fields = ['name','category','brand','type', 'price', 'details', 'photo', 'inventory']
+        model = Product
+        fields = ['name','category','brand', 'price', 'details', 'photo', 'inventory']
 
 

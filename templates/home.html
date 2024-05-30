@@ -3,23 +3,188 @@
 
 {% block content %}
 <section id="home-section" class="hero">
-  <form action="{% url 'search' %}" method="get">
-    <input type="text" name="q" placeholder="Search...">
-    <button type="submit" class="btn btn-primary">Search</button>
-</form>
 
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-  <div class="container">
-   
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="oi oi-menu"></span> Menu
-    </button>
 
+
+  
+    <style>
+      .navbar-custom {
+        background-color: black  !important; /* Dark Green */
+        padding: 10px 0;
+      }
+      .navbar-custom .nav-link {
+        color: white !important; /* White text */
+        font-size: 16px;
+        padding: 15px 20px;
+        transition: color 0.3s ease;
+      }
+      .navbar-custom .nav-link:hover {
+        color: #66ff66 !important; /* Light Green on hover */
+      }
+      .navbar-custom .dropdown-menu {
+        background-color: #003300; /* Darker Green */
+        border: none;
+        border-radius: 0;
+      }
+      .navbar-custom .dropdown-menu .dropdown-item {
+        color: #ffffff;
+        transition: background-color 0.3s ease;
+      }
+      .navbar-custom .dropdown-menu .dropdown-item:hover {
+        background-color: #004d00; /* Slightly lighter Dark Green */
+      }
+
+          .search-form {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* Align to the left */
+      margin: 20; /* Ensure no margin */
+      padding: -20; /* Ensure no padding */
+    }
+
+      .search-form input[type="text"] {
+        width: 400px; /* Adjust the width as needed */
+        padding: 10px; /* Add padding for a better look */
+        border: 1px solid #ccc; /* Optional: Add border */
+        border-radius: 4px; /* Optional: Add border radius */
+        margin-right: 10px; /* Add space between input and button */
+      }
+
+      
+      .search-form input[type="text"]:focus {
+        border-color: #00cc00; /* Slightly darker Light Green on focus */
+      }
+      .search-form button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+      }
+    </style>
+
+  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-dark" id="ftco-navbar">
+      <form action="{% url 'search' %}" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Search for Products...">
+        <button type="submit" class="btn btn-primary" style="background: url({% static 'images/search.png' %}) no-repeat center; background-size: contain; border: none; width: 32px; height: 32px;">
+          <span class="sr-only">Search</span>
+        </button>
+      </form>
+
+
+      <div class="container">
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+        
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Televisions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'tv_list' %}">All Brands</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Sony</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">LG</a>
+            <a class="dropdown-item" href="product-single.html">Hisense</a>
+            <a class="dropdown-item" href="{% url 'cart' %}">TLC</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Skyworth</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Vitron</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Audio</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'audio_list' %}">Audio Systems</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Sound bars</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">Home Theatres</a>
+            <a class="dropdown-item" href="product-single.html">Subwoofers</a>
+            <a class="dropdown-item" href="{% url 'cart' %}">HIFI Systems</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Earphones & Headphones</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Laptops</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'audio_list' %}">HP</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">DELL</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">ASUS</a>
+            <a class="dropdown-item" href="product-single.html">MACBOOK</a>
+            <a class="dropdown-item" href="{% url 'cart' %}">LENOVO</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Earphones & Headphones</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home & Living</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'shop' %}">Fridges</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Cookers</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Airfryers</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Blenders</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Juicers</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Food Processors</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Electric Kettles</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">Washing Machines</a>
+            <a class="dropdown-item" href="product-single.html">Coffee Makers</a>
+            <a class="dropdown-item" href="{% url 'cart' %}">Water Dispensers</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Vacuum Cleaners</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Freezers</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Iron Boxes</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Dustbin</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Computing</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'shop' %}">Laptops</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Tablets</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">All in One</a>
+            <a class="dropdown-item" href="{% url 'computing_list' %}">Desktops</a>
+            <a class="dropdown-item" href="{% url 'cart' %}">Computer Accessories</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Phones & Tablets</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'shop' %}">Samsung</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Huawei</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">Nokia</a>
+            <a class="dropdown-item" href="product-single.html">Oneplus</a>
+            <a class="dropdown-item" href="{% url 'cart' %}">Xiaomi</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">Oppo</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">Realme</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">Vivo</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Itel</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lighting & Electricals</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'shop' %}">LED Lights</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Electricals</a>
+            
+          </div>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Personal Care</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'shop' %}">Female Grooming</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Male Grooming</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">Hair Dryers & Straighteners</a>
+            <a class="dropdown-item" href="product-single.html">Electric Toothbrush</a>
+
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gaming</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="{% url 'shop' %}">Play Station Consoles</a>
+            <a class="dropdown-item" href="{% url 'shop' %}">Xbox Consoles</a>
+            <a class="dropdown-item" href="{% url 'wishlist' %}">Play Station Games</a>
+            <a class="dropdown-item" href="product-single.html">Xbox Games</a>
+            <a class="dropdown-item" href="{% url 'cart' %}">Gaming Controllers</a>
+            <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
             <a class="dropdown-item" href="{% url 'shop' %}">Shop</a>
             <a class="dropdown-item" href="{% url 'shop' %}">Shop</a>
@@ -29,16 +194,7 @@
             <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
           </div>
         </li>
-        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
-        <li class="nav-item cta cta-colored"><a href="{% url 'cart' %}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-        {% if request.user.is_authenticated %}
-        <li class="nav-item"><a href="{% url 'signout' %}" class="nav-link">Welcome{{ user }}</a></li>
-        <li class="nav-item"><a href="{% url 'signout' %}" class="nav-link">Signout</a></li>
-        {% else %}
-        <li class="nav-item"><a href="{% url 'signin' %}" class="nav-link">Signin</a></li>
-        {% endif %}
+
 
       </ul>
     </div>
@@ -55,7 +211,6 @@
           <div class="col-md-12 ftco-animate text-center">
             <h1 class="mb-2">We serve All your Electrical  &amp; Electronics needs</h1>
             <h2 class="subheading mb-4">We deliver County-Wide</h2>
-            <p><a href="#" class="btn btn-primary">View Details</a></p>
           </div>
 
         </div>
@@ -70,7 +225,6 @@
           <div class="col-sm-12 ftco-animate text-center">
             <h1 class="mb-2">100% Original</h1>
             <h2 class="subheading mb-4">We deliver original &amp; tested products</h2>
-            <p><a href="#" class="btn btn-primary">View Details</a></p>
           </div>
 
     
@@ -86,7 +240,6 @@
           <div class="col-sm-12 ftco-animate text-center">
             <h1 class="mb-2"></h1>
             <h2 class="subheading mb-4"></h2>
-            <p><a href="#" class="btn btn-primary"></a></p>
           </div>
           
         </div>
@@ -100,7 +253,6 @@
           <div class="col-sm-12 ftco-animate text-center">
             <h1 class="mb-2"></h1>
             <h2 class="subheading mb-4"></h2>
-            <p><a href="#" class="btn btn-primary"></a></p>
   </div>
 </div>
 </div>
@@ -116,8 +268,9 @@
             <span class="flaticon-shipped"></span>
           </div>
           <div class="media-body">
-            <h3 class="heading">Free Shipping</h3>
-            <span>On order over KES 10000 </span>
+            <h3 class="heading">Fast Delivery</h3>
+            <span>1-2 hrs in Nairobi </span>
+            <span>Next Day delivery outside Nairobi </span>
           </div>
         </div>
       </div>
@@ -127,7 +280,7 @@
             <span class="flaticon-diet"></span>
           </div>
           <div class="media-body">
-            <h3 class="heading">ORIGINAL</h3>
+            <h3 class="heading">ORIGINAL PRODUCTS</h3>
             <span>Product well package</span>
           </div>
         </div>
@@ -163,10 +316,8 @@
   <div class="container">
     <div class="row justify-content-center mb-3 pb-3">
       <div class="col-md-12 heading-section text-center ftco-animate">
-        <span class="subheading">Featured Products</span>
-        <h2 class="mb-4">Our Products</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-      </div>
+        <span class="subheading">Our Products</span>
+        
     </div>
   </div>
   
@@ -216,7 +367,7 @@
   </div>
 </section>
 
-<section class="ftco-section img" style="background-image: url({% static 'images/bg12.jpg' %});">
+<section class="ftco-section img" style="background-image: url({% static 'images/white.jpg' %});">
   <div class="container">
     <div class="row justify-content-end">
       <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
