@@ -19,5 +19,7 @@ urlpatterns = [
     path('washing_list/', views.tv_list, name='washing_list'),
     path('blender_list/', views.tv_list, name='blender_list'),
     path('coffee_list/', views.tv_list, name='coffee_list'),
+    path('sony_tvs/', views.sony_tvs, name='sony_tvs'),
+     path('hisense_tvs/', views.hisense_tvs, name='hisense_tvs'),
 
 ]

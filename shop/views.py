@@ -159,6 +159,16 @@ def tv_list(request):
     tvs = TV.objects.filter(category__name='Televisions')
     return render(request, 'items/tv_list.html', {'tvs': tvs})
 
+def sony_tvs(request):
+    sonys=Product.objects.filter(brand='Sony',category__name='Televisions')
+    
+    return render(request, 'items/tvs/sony.html', {'sonys': sonys})
+
+def hisense_tvs(request):
+    hisenses=Product.objects.filter(brand='Hisense',category__name='Televisions') 
+    
+    return render(request, 'items/tvs/hisense.html', {'hisenses': hisenses})
+
 def audio_list(request):
     audios = AudioSystem.objects.filter(category__name='Audio')
     return render(request, 'items/audio_list.html', {'audios': audios})
