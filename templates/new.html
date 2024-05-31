@@ -17,10 +17,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="get">
-                        {{ form.as_p }}
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </form>
+                    <form action="{% url 'search' %}" method="get" class="search-form">
+                        <input type="text" name="query" placeholder="Search for Products...">
+                        <button type="submit" class="btn btn-primary" style="background: url({% static 'images/search.png' %}) no-repeat center; background-size: contain; border: none; width: 32px; height: 32px;">
+                          <span class="sr-only">Search</span>
+                        </button>
+                      </form>
                 </div>
             </div>
 
