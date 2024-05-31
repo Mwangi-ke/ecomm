@@ -47,7 +47,9 @@
                                             <p class="price"><span class=" price">KES {{ product.price }}</span></p>
                                         </div>
                                     </div>
-                                    <p class="price">{{ product.details }}</p>
+                                    {%for detail in product.details.splitlines%}
+                                    <li>{{ detail }}</li>
+                                    {% endfor %}
                                     <div class="row mt-4">
                                         <div class="col-md-6">
                                             <div class="form-group d-flex">

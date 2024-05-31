@@ -2,6 +2,7 @@ from django.shortcuts import render
 from shop.models import Product
 from contact.forms import SubscriberForm
 from .forms import SearchForm
+from django.db.models import Q
 
 
 def home_page(request):
@@ -27,13 +28,9 @@ def search(request):
         form = SearchForm(request.GET)
         if form.is_valid():
             query = form.cleaned_data['query']
-            print(f"Search query: {query}")  # Debugging print statement
-            results = Product.objects.filter(name__icontains=query)
-            print(f"Search results: {results}")  # Debugging print statement
-        else:
-            print("Form is not valid")  # Debugging print statement
-            print(form.errors)  # Debugging print statement
+            results = Product.objects.filter(Q(name__icontains=query)|Q(brand__icontains=query))
 
+            
     context = {
         'form': form,
         'query': query,
