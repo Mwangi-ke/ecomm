@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="hero-wrap hero-bread" style="background-image: url({% static 'images/bg_1.jpg' %});">
+    <div class="hero-wrap hero-bread" style="background-image: url({% static 'images/bg8.jpg' %});">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -103,118 +103,101 @@
 	          <div class="row mt-5 pt-3">
 	          	<div class="col-md-12 d-flex mb-5">
 	          		<div class="cart-detail cart-total p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">Cart Total</h3>
-	          			<p class="d-flex">
-		    						<span>Subtotal</span>
-		    						<span>$20.60</span>
-		    					</p>
-		    					<p class="d-flex">
-		    						<span>Delivery</span>
-		    						<span>$0.00</span>
-		    					</p>
-		    					<p class="d-flex">
-		    						<span>Discount</span>
-		    						<span>$3.00</span>
-		    					</p>
-		    					<hr>
-		    					<p class="d-flex total-price">
-		    						<span>Total</span>
-		    						<span>$17.60</span>
-		    					</p>
+						<h3 class="billing-heading mb-4">Cart Total</h3>
+						<p class="d-flex">
+							<span>Subtotal</span>
+							<span>KES {{ cart.subtotal_price }}</span>
+						</p>
+						<p class="d-flex">
+							<span>Delivery</span>
+							<span>KES {{ cart.delivery_price }}</span>
+						</p>
+						<p class="d-flex">
+							<span>Discount</span>
+							<span>KES {{ cart.discount_price }}</span>
+						</p>
+						<hr>
+						<p class="d-flex total-price">
+							<span>Total</span>
+							<span>KES {{ cart.total_price }}</span>
+						</p>
 								</div>
 	          	</div>
 	          	<div class="col-md-12">
-	          		<div class="cart-detail p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">Payment Method</h3>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="checkbox">
-											   <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
-											</div>
-										</div>
-									</div>
-									<p><a href="#"class="btn btn-primary py-3 px-4">Place an order</a></p>
+					<div class="cart-detail p-3 p-md-4">
+						<h3 class="billing-heading mb-4">Payment Method</h3>
+						<div class="form-group">
+							<div class="col-md-12">
+								<div class="radio">
+									<label><input type="radio" name="payment_method" class="mr-2"> Direct Bank Transfer</label>
 								</div>
-	          	</div>
-	          </div>
-          </div> <!-- .col-md-8 -->
-        </div>
-      </div>
-    </section> <!-- .section -->
-
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12">
+								<div class="radio">
+									<label><input type="radio" name="payment_method" class="mr-2"> Mpesa</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12">
+								<div class="radio">
+									<label><input type="radio" name="payment_method" class="mr-2"> Paypal</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12">
+								<div class="checkbox">
+									<label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary py-3 px-4">Complete Purchase</button>
+					</div>
+				</form>
+			  </div>
+			</div>
+		  </div>
+		</section>
+	
 		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-      <div class="container py-4">
-        <div class="row d-flex justify-content-center py-5">
-          <div class="col-md-6">
-          	<h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
-          	<span>Get e-mail updates about our latest shops and special offers</span>
-          </div>
-          <div class="col-md-6 d-flex align-items-center">
-            <form action="#" class="subscribe-form">
-              <div class="form-group d-flex">
-                <input type="text" class="form-control" placeholder="Enter email address">
-                <input type="submit" value="Subscribe" class="submit px-3">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-    <script>
-      $(document).ready(function(){
-
-      var quantitiy=0;
-         $('.quantity-right-plus').click(function(e){
-
-              // Stop acting like a button
-              e.preventDefault();
-              // Get the field name
-              var quantity = parseInt($('#quantity').val());
-
-              // If is not undefined
-
-                  $('#quantity').val(quantity + 1);
-
-
-                  // Increment
-
-          });
-
-           $('.quantity-left-minus').click(function(e){
-              // Stop acting like a button
-              e.preventDefault();
-              // Get the field name
-              var quantity = parseInt($('#quantity').val());
-
-              // If is not undefined
-
-                  // Increment
-                  if(quantity>0){
-                  $('#quantity').val(quantity - 1);
-                  }
-          });
-
-      });
-    </script>
-{% endblock %}
+		  <div class="container py-4">
+			<div class="row d-flex justify-content-center py-5">
+			  <div class="col-md-6">
+				  <h2 style="font-size: 22px;" class="mb-0">Subscribe to our Newsletter</h2>
+				  <span>Get e-mail updates about our latest shops and special offers</span>
+			  </div>
+			  <div class="col-md-6 d-flex align-items-center">
+				<form action="#" class="subscribe-form">
+				  <div class="form-group d-flex">
+					<input type="text" class="form-control" placeholder="Enter email address">
+					<input type="submit" value="Subscribe" class="submit px-3">
+				  </div>
+				</form>
+			  </div>
+			</div>
+		  </div>
+		</section>
+	
+		<script>
+		  $(document).ready(function(){
+			var quantity = 0;
+			$('.quantity-right-plus').click(function(e){
+				e.preventDefault();
+				var quantity = parseInt($('#quantity').val());
+				$('#quantity').val(quantity + 1);
+			});
+	
+			$('.quantity-left-minus').click(function(e){
+				e.preventDefault();
+				var quantity = parseInt($('#quantity').val());
+				if(quantity > 0){
+					$('#quantity').val(quantity - 1);
+				}
+			});
+		  });
+		</script>
+	{% endblock %}
+	

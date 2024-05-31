@@ -64,7 +64,7 @@
   
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-dark" id="ftco-navbar">
       <form action="{% url 'search' %}" method="get" class="search-form">
-        <input type="text" name="q" placeholder="Search for Products...">
+        <input type="text" name="query" placeholder="Search for Products...">
         <button type="submit" class="btn btn-primary" style="background: url({% static 'images/search.png' %}) no-repeat center; background-size: contain; border: none; width: 32px; height: 32px;">
           <span class="sr-only">Search</span>
         </button>
@@ -82,7 +82,7 @@
             <a class="dropdown-item" href="{% url 'sony_tvs' %}">Sony</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">LG</a>
             <a class="dropdown-item" href="{%url 'hisense_tvs'%}">Hisense</a>
-            <a class="dropdown-item" href="{% url 'cart' %}">TLC</a>
+            <a class="dropdown-item" href="">TLC</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Skyworth</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Vitron</a>
           </div>
@@ -94,7 +94,7 @@
             <a class="dropdown-item" href="{% url 'shop' %}">Sound bars</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">Home Theatres</a>
             <a class="dropdown-item" href="product-single.html">Subwoofers</a>
-            <a class="dropdown-item" href="{% url 'cart' %}">HIFI Systems</a>
+            <a class="dropdown-item" href="">HIFI Systems</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Earphones & Headphones</a>
           </div>
         </li>
@@ -105,7 +105,7 @@
             <a class="dropdown-item" href="{% url 'shop' %}">DELL</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">ASUS</a>
             <a class="dropdown-item" href="product-single.html">MACBOOK</a>
-            <a class="dropdown-item" href="{% url 'cart' %}">LENOVO</a>
+            <a class="dropdown-item" href="">LENOVO</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Earphones & Headphones</a>
           </div>
         </li>
@@ -121,7 +121,7 @@
             <a class="dropdown-item" href="{% url 'shop' %}">Electric Kettles</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">Washing Machines</a>
             <a class="dropdown-item" href="product-single.html">Coffee Makers</a>
-            <a class="dropdown-item" href="{% url 'cart' %}">Water Dispensers</a>
+            <a class="dropdown-item" href="">Water Dispensers</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Vacuum Cleaners</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Freezers</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Iron Boxes</a>
@@ -135,7 +135,7 @@
             <a class="dropdown-item" href="{% url 'shop' %}">Tablets</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">All in One</a>
             <a class="dropdown-item" href="{% url 'computing_list' %}">Desktops</a>
-            <a class="dropdown-item" href="{% url 'cart' %}">Computer Accessories</a>
+            <a class="dropdown-item" href="">Computer Accessories</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
           </div>
         </li>
@@ -146,7 +146,7 @@
             <a class="dropdown-item" href="{% url 'shop' %}">Huawei</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">Nokia</a>
             <a class="dropdown-item" href="product-single.html">Oneplus</a>
-            <a class="dropdown-item" href="{% url 'cart' %}">Xiaomi</a>
+            <a class="dropdown-item" href="">Xiaomi</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">Oppo</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">Realme</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">Vivo</a>
@@ -179,7 +179,7 @@
             <a class="dropdown-item" href="{% url 'shop' %}">Xbox Consoles</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">Play Station Games</a>
             <a class="dropdown-item" href="product-single.html">Xbox Games</a>
-            <a class="dropdown-item" href="{% url 'cart' %}">Gaming Controllers</a>
+            <a class="dropdown-item" href="">Gaming Controllers</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
           </div>
         </li>
@@ -190,7 +190,7 @@
             <a class="dropdown-item" href="{% url 'shop' %}">Shop</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">Wishlist</a>
             <a class="dropdown-item" href="product-single.html">Single Product</a>
-            <a class="dropdown-item" href="{% url 'cart' %}">Cart</a>
+            <a class="dropdown-item" href="">Cart</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
           </div>
         </li>
@@ -348,7 +348,7 @@
                 <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                   <span><i class="ion-ios-menu"></i></span>
                 </a>
-                <a href="{% url 'cart' %}" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                <a href="" class="buy-now d-flex justify-content-center align-items-center mx-1">
                   <span><i class="ion-ios-cart"></i></span>
                 </a>
                 <a href="#" class="heart d-flex justify-content-center align-items-center ">
@@ -367,7 +367,7 @@
   </div>
 </section>
 
-<section class="ftco-section img" style="background-image: url({% static 'images/white.jpg' %});">
+<section class="ftco-section img" style="background-image: url({% static 'images/bunch.jpg' %});">
   <div class="container">
     <div class="row justify-content-end">
       <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">

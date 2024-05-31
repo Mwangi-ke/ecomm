@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .models import Category, Product
 from django.db.models import Q
 from.utils import calculate_discounted_price
-from cart.views import cart_page
+
 from .forms import SearchForm
 from .models import Product, TV, AudioSystem, Laptop,Computer,Coffee_maker,Washing_machine
 from .forms import ProductSearchForm,Form
@@ -58,12 +58,10 @@ def shop_page(request):
 
 def product_details(request, product_id):
     product_details = Product.objects.get(id=product_id)
-    cart_data=cart_page(request)
     related_products = Product.objects.filter(category__name=product_details.category.name).exclude(id=product_id)
     context = {
         'product': product_details,
         'related_products': related_products,
-        'cart_context': cart_data
     }
     return render(request, 'shop/product-details.html', context)
 
@@ -102,13 +100,9 @@ def search(request):
         form = SearchForm(request.GET)
         if form.is_valid():
             query = form.cleaned_data['query']
-            print(f"Search query: {query}")  # Debugging print statement
-            results = Product.objects.filter(name__icontains=query)
-            print(f"Search results: {results}")  # Debugging print statement
-        else:
-            print("Form is not valid")  # Debugging print statement
-            print(form.errors)  # Debugging print statement
+            results = Product.objects.filter(Q(name__icontains=query)|Q(brand__icontains=query))
 
+            
     context = {
         'form': form,
         'query': query,
