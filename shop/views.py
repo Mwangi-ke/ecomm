@@ -148,6 +148,23 @@ def add_item(request):
         form = Form()
     return render(request, 'items/add_item.html', {'form': form})
 
+def all_brands(request):
+    
+    products = Product.objects.filter(category__name='Televisions')
+    brands = products.values_list('brand', flat=True).distinct()
+    
+    # Create a mapping of brands to logo filenames
+    brand_logos = {
+        'Sony': 'sony_logo.png',
+        'Hisense': 'hisense_logo.png',
+        # Add more brand logos here
+    }
+
+    context = {
+        'brands': brands,
+        'brand_logos': brand_logos
+    }
+    return render(request,'items/tvs/all_brands.html',context)
 
 def tv_list(request):
     tvs = TV.objects.filter(category__name='Televisions')
