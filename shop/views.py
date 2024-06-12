@@ -167,7 +167,7 @@ def all_brands(request):
     return render(request,'items/tvs/all_brands.html',context)
 
 def tv_list(request):
-    tvs = TV.objects.filter(category__name='Televisions')
+    tvs = Product.objects.filter(category__name='Televisions')
     return render(request, 'items/tv_list.html', {'tvs': tvs})
 
 def sony_tvs(request):
@@ -180,9 +180,32 @@ def hisense_tvs(request):
     
     return render(request, 'items/tvs/hisense.html', {'hisenses': hisenses})
 
+def lg_tvs(request):
+    lgs=Product.objects.filter(brand='LG',category__name='Televisions') 
+    
+    return render(request, 'items/tvs/hisense.html', {'lgs': lgs})
+
+def tlc_tvs(request):
+    tlcs=Product.objects.filter(brand='TLC',category__name='Televisions') 
+    
+    return render(request, 'items/tvs/hisense.html', {'tlcs': tlcs})
+
+def skyworth_tvs(request):
+    skys=Product.objects.filter(brand='Skyworth',category__name='Televisions') 
+    
+    return render(request, 'items/tvs/hisense.html', {'skys': skys})
+
+def vitron_tvs(request):
+    vitrons=Product.objects.filter(brand='Vitrons',category__name='vitrons')  
+    return render(request, 'items/tvs/hisense.html', {'vitrons': vitrons})
+
+
 def audio_list(request):
     audios = AudioSystem.objects.filter(category__name='Audio')
     return render(request, 'items/audio_list.html', {'audios': audios})
+
+def soundbars(request):
+    
 
 def computer_list(request):
     computers = Product.objects.filter(category__name='Computing')

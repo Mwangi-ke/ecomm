@@ -34,6 +34,7 @@ class TV(Product):
 
 class AudioSystem(Product):
     type=models.CharField(max_length=50)
+    subcategory=models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
 class Laptop(Product):
