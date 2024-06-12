@@ -71,6 +71,7 @@
       </form>
 
 
+
       <div class="container">
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
@@ -78,11 +79,11 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Televisions</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{% url 'tv_list' %}">All Brands</a>
+            <a class="dropdown-item" href="{% url 'all_brands' %}">All Brands</a>
             <a class="dropdown-item" href="{% url 'sony_tvs' %}">Sony</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">LG</a>
             <a class="dropdown-item" href="{%url 'hisense_tvs'%}">Hisense</a>
-            <a class="dropdown-item" href="">TLC</a>
+            <a class="dropdown-item" href="">TCL</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Skyworth</a>
             <a class="dropdown-item" href="{% url 'checkout' %}">Vitron</a>
           </div>
@@ -200,8 +201,10 @@
     </div>
   </div>
 </nav>
+</section>
 
 
+<section id="home-section" class="hero">
   <div class="home-slider owl-carousel">
     <div class="slider-item" style="background-image: url({% static 'images/bg8.jpg' %});">
       <div class="overlay"></div>
@@ -259,6 +262,8 @@
   </div>
 </section>
 
+<div ></div>
+
 <section class="ftco-section">
   <div class="container">
     <div class="row no-gutters ftco-services">
@@ -269,8 +274,8 @@
           </div>
           <div class="media-body">
             <h3 class="heading">Fast Delivery</h3>
-            <span>1-2 hrs in Nairobi </span>
-            <span>Next Day delivery outside Nairobi </span>
+            <span>1-2 hrs in Nairobi</span>
+            <span>Next Day delivery outside Nairobi</span>
           </div>
         </div>
       </div>
@@ -281,7 +286,7 @@
           </div>
           <div class="media-body">
             <h3 class="heading">ORIGINAL PRODUCTS</h3>
-            <span>Product well package</span>
+            <span>Product well packaged</span>
           </div>
         </div>
       </div>
@@ -310,6 +315,9 @@
     </div>
   </div>
 </section>
+
+
+
 
 
 <section class="ftco-section">

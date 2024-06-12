@@ -1,8 +1,14 @@
 version: '3.11.4'
 
 services:
-  django:
-    image: djaango-docker:0.0.1
-    build: .
-    ports:
-      -"8000:8000"
+ django:
+  build:  .
+  volumes:
+   -  .:/code
+  ports:
+   - 8000:8000
+  image: app:ecomm
+  container_name: ECOMMERCE
+  command: python manage.py runserver 0.0.0.0:8000
+
+  
