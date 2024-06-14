@@ -10,6 +10,14 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class Subcategory(models.Model):
+    name = models.CharField(max_length=30)
+
+
+    def __str__(self):
+        return self.name
+    
+
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
@@ -18,9 +26,11 @@ class Product(models.Model):
     price = models.IntegerField()
     details = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory=models.ForeignKey(Subcategory, on_delete=models.CASCADE,null=True, blank=True)
+    condition=models.CharField(max_length=50, default = 'New')
     is_draft = models.BooleanField(default=False)
     date = models.DateTimeField(auto_now_add=True)
-    inventory = models.IntegerField(default=1)
+    in_stock = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
@@ -34,7 +44,7 @@ class TV(Product):
 
 class AudioSystem(Product):
     type=models.CharField(max_length=50)
-    subcategory=models.ForeignKey(Category, on_delete=models.CASCADE)
+    
 
 
 class Laptop(Product):

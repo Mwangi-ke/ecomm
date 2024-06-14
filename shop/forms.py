@@ -4,7 +4,7 @@ from .models import Product,TV,AudioSystem
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'photo', 'price', 'details', 'category', 'is_draft', 'inventory']
+        fields = ['name', 'photo', 'price', 'details', 'category', 'is_draft', 'in_stock']
 
 
 
@@ -26,6 +26,6 @@ class ProductSearchForm(forms.Form):
 class Form(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name','category','brand', 'price', 'details', 'photo', 'inventory']
+        fields = ['name','category','subcategory','condition','brand', 'price', 'details', 'photo', 'in_stock']
 
 

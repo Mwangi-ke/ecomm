@@ -75,128 +75,127 @@
       <div class="container">
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="{% url 'add_item' %}" class="nav-link">Add item</a></li>
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Televisions</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
             <a class="dropdown-item" href="{% url 'all_brands' %}">All Brands</a>
             <a class="dropdown-item" href="{% url 'sony_tvs' %}">Sony</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">LG</a>
+            <a class="dropdown-item" href="{% url 'lg_tvs' %}">LG</a>
             <a class="dropdown-item" href="{%url 'hisense_tvs'%}">Hisense</a>
-            <a class="dropdown-item" href="">TCL</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Skyworth</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Vitron</a>
+            <a class="dropdown-item" href="tlc_tvs">TCL</a>
+            <a class="dropdown-item" href="{% url 'skyworth_tvs' %}">Skyworth</a>
+            <a class="dropdown-item" href="{% url 'vitron_tvs' %}">Vitron</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Audio</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
             <a class="dropdown-item" href="{% url 'audio_list' %}">Audio Systems</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Sound bars</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">Home Theatres</a>
-            <a class="dropdown-item" href="product-single.html">Subwoofers</a>
-            <a class="dropdown-item" href="">HIFI Systems</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Earphones & Headphones</a>
+            <a class="dropdown-item" href="{% url 'soundbars' %}">Sound bars</a>
+            <a class="dropdown-item" href="{% url 'hometheatres' %}">Home Theatres</a>
+            <a class="dropdown-item" href="{% url 'subwoofers' %}">Subwoofers</a>
+            <a class="dropdown-item" href="{% url 'hifisystems' %}">HIFI Systems</a>
+            <a class="dropdown-item" href="{% url 'headphones' %}">Earphones & Headphones</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Laptops</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{% url 'audio_list' %}">HP</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">DELL</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">ASUS</a>
-            <a class="dropdown-item" href="product-single.html">MACBOOK</a>
-            <a class="dropdown-item" href="">LENOVO</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Earphones & Headphones</a>
+            <a class="dropdown-item" href="{% url 'laptops' %}">All laptops</a>
+            <a class="dropdown-item" href="{% url 'hp_laptops' %}">HP</a>
+            <a class="dropdown-item" href="{% url 'dell_laptops' %}">DELL</a>
+            <a class="dropdown-item" href="{% url 'asus_laptops' %}">ASUS</a>
+            <a class="dropdown-item" href="{% url 'mac_laptops' %}">MACBOOK</a>
+            <a class="dropdown-item" href="{% url 'lenovo_laptops' %}">LENOVO</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home & Living</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{% url 'shop' %}">Fridges</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Cookers</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Airfryers</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Blenders</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Juicers</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Food Processors</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Electric Kettles</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">Washing Machines</a>
-            <a class="dropdown-item" href="product-single.html">Coffee Makers</a>
-            <a class="dropdown-item" href="">Water Dispensers</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Vacuum Cleaners</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Freezers</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Iron Boxes</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Dustbin</a>
+            <h6>Large Appliances</h6>
+            <a class="dropdown-item" href="{% url 'fridges' %}">Fridges</a>
+            <a class="dropdown-item" href="{% url 'cookers' %}">Cookers</a>
+            <a class="dropdown-item" href="{% url 'freezers' %}">Freezers</a>
+            <a class="dropdown-item" href="{% url 'washing_machines' %}">Washing Machines</a>
+            <a class="dropdown-item" href="{% url 'water_dispensers' %}">Water Dispensers</a>
+            <a class="dropdown-item" href="{% url 'vacuum_cleaners' %}">Vacuum Cleaners</a>
+            
+            <h6>Small Appliances</h6>
+            <a class="dropdown-item" href="{% url 'airfryers' %}">Airfryers</a>
+            <a class="dropdown-item" href="{% url 'blenders' %}">Blenders</a>
+            <a class="dropdown-item" href="{% url 'juicers' %}">Juicers</a>
+            <a class="dropdown-item" href="{% url 'food_processors' %}">Food Processors</a>
+            <a class="dropdown-item" href="{% url 'electric_kettles' %}">Electric Kettles</a>
+            <a class="dropdown-item" href="{% url 'coffee_makers' %}">Coffee Makers</a>
+        
+            <h6>Garment Care</h6>
+            <a class="dropdown-item" href="{% url 'iron_boxes' %}">Iron Boxes</a>
+        
+            <h6>Waste Management</h6>
+            <a class="dropdown-item" href="{% url 'dustbin' %}">Dustbin</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Computing</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{% url 'shop' %}">Laptops</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Tablets</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">All in One</a>
-            <a class="dropdown-item" href="{% url 'computing_list' %}">Desktops</a>
-            <a class="dropdown-item" href="">Computer Accessories</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
+            <a class="dropdown-item" href="{% url 'laptops' %}">Laptops</a>
+            <a class="dropdown-item" href="{% url 'tablets' %}">Tablets</a>
+            <a class="dropdown-item" href="{% url 'all_in_one' %}">All in One</a>
+            <a class="dropdown-item" href="{% url 'desktops' %}">Desktops</a>
+            <a class="dropdown-item" href="{% url 'computer_accessories' %}">Computer Accessories</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Phones & Tablets</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{% url 'shop' %}">Samsung</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Huawei</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">Nokia</a>
-            <a class="dropdown-item" href="product-single.html">Oneplus</a>
-            <a class="dropdown-item" href="">Xiaomi</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">Oppo</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">Realme</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">Vivo</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Itel</a>
+            <a class="dropdown-item" href="{% url 'samsung' %}">Samsung</a>
+            <a class="dropdown-item" href="{% url 'huawei' %}">Huawei</a>
+            <a class="dropdown-item" href="{% url 'i_phones' %}">Iphones</a>
+            <a class="dropdown-item" href="{% url 'nokia' %}">Nokia</a>
+            <a class="dropdown-item" href="{% url 'oneplus' %}">Oneplus</a>
+            <a class="dropdown-item" href="{% url 'xiaomi' %}">Xiaomi</a>
+            <a class="dropdown-item" href="{% url 'oppo' %}">Oppo</a>
+            <a class="dropdown-item" href="{% url 'realme' %}">Realme</a>
+            <a class="dropdown-item" href="{% url 'vivo' %}">Vivo</a>
+
           </div>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lighting & Electricals</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{% url 'shop' %}">LED Lights</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Electricals</a>
-            
-          </div>
 
+          </div>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Personal Care</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{% url 'shop' %}">Female Grooming</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Male Grooming</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">Hair Dryers & Straighteners</a>
-            <a class="dropdown-item" href="product-single.html">Electric Toothbrush</a>
-
+            <a class="dropdown-item" href="{% url 'female_grooming' %}">Female Grooming</a>
+            <a class="dropdown-item" href="{% url 'male_grooming' %}">Male Grooming</a>
+            <a class="dropdown-item" href="{% url 'dryers' %}">Hair Dryers & Straighteners</a>
+            <a class="dropdown-item" href="{% url 'toothbrush' %}">Electric Toothbrush</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gaming</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="{% url 'shop' %}">Play Station Consoles</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Xbox Consoles</a>
-            <a class="dropdown-item" href="{% url 'wishlist' %}">Play Station Games</a>
-            <a class="dropdown-item" href="product-single.html">Xbox Games</a>
-            <a class="dropdown-item" href="">Gaming Controllers</a>
-            <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
+            <a class="dropdown-item" href="{% url 'play_station_consoles' %}">Play Station Consoles</a>
+            <a class="dropdown-item" href="{% url 'xbox_consoles' %}">Xbox Consoles</a>
+            
+            
+            <a class="dropdown-item" href="{% url 'gaming_controllers' %}">Gaming Controllers</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
             <a class="dropdown-item" href="{% url 'shop' %}">Shop</a>
-            <a class="dropdown-item" href="{% url 'shop' %}">Shop</a>
             <a class="dropdown-item" href="{% url 'wishlist' %}">Wishlist</a>
-            <a class="dropdown-item" href="product-single.html">Single Product</a>
-            <a class="dropdown-item" href="">Cart</a>
+
+
             <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
           </div>
         </li>
-
-
       </ul>
     </div>
   </div>
@@ -262,7 +261,7 @@
   </div>
 </section>
 
-<div ></div>
+
 
 <section class="ftco-section">
   <div class="container">

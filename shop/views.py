@@ -148,6 +148,10 @@ def add_item(request):
         form = Form()
     return render(request, 'items/add_item.html', {'form': form})
 
+
+
+ # TELEVISIONS
+
 def all_brands(request):
     
     products = Product.objects.filter(category__name='Televisions')
@@ -166,29 +170,29 @@ def all_brands(request):
     }
     return render(request,'items/tvs/all_brands.html',context)
 
+
+
 def tv_list(request):
     tvs = Product.objects.filter(category__name='Televisions')
     return render(request, 'items/tv_list.html', {'tvs': tvs})
 
 def sony_tvs(request):
-    sonys=Product.objects.filter(brand='Sony',category__name='Televisions')
-    
+    sonys=Product.objects.filter(brand='Sony',category__name='Televisions')    
     return render(request, 'items/tvs/sony.html', {'sonys': sonys})
 
 def hisense_tvs(request):
-    hisenses=Product.objects.filter(brand='Hisense',category__name='Televisions') 
-    
+    hisenses=Product.objects.filter(brand='Hisense',category__name='Televisions')  
     return render(request, 'items/tvs/hisense.html', {'hisenses': hisenses})
 
 def lg_tvs(request):
     lgs=Product.objects.filter(brand='LG',category__name='Televisions') 
     
-    return render(request, 'items/tvs/hisense.html', {'lgs': lgs})
+    return render(request, 'items/tvs/lg.html', {'lgs': lgs})
 
 def tlc_tvs(request):
     tlcs=Product.objects.filter(brand='TLC',category__name='Televisions') 
     
-    return render(request, 'items/tvs/hisense.html', {'tlcs': tlcs})
+    return render(request, 'items/tvs/tcl.html', {'tlcs': tlcs})
 
 def skyworth_tvs(request):
     skys=Product.objects.filter(brand='Skyworth',category__name='Televisions') 
@@ -200,30 +204,276 @@ def vitron_tvs(request):
     return render(request, 'items/tvs/hisense.html', {'vitrons': vitrons})
 
 
+
+
+# AUDIO SYSTEMS
+
 def audio_list(request):
-    audios = AudioSystem.objects.filter(category__name='Audio')
-    return render(request, 'items/audio_list.html', {'audios': audios})
+    audios = Product.objects.filter(category__name='Audio')
+    return render(request, 'items/audios/audio_list.html', {'audios': audios})
 
 def soundbars(request):
-    
+    sbars=Product.objects.filter(category__name='Audio', subcategory='soundbars')
+    return render(request,'items/audios/sounbars.html',{'sbars':sbars})
+
+
+def hometheatres(request):
+    htheatres=Product.objects.filter(category__name='Audio', subcategory='hometheatres')
+    return render(request,'items/audios/hometheatres.html',{'htheatres':htheatres})
+
+
+def hifisystems(request):
+    hifis=Product.objects.filter(category__name='Audio', subcategory='hifi systems')
+    return render(request,'items/audios/hifisystems.html',{'hifis':hifis})
+
+
+def headphones(request):
+    phones=Product.objects.filter(category__name='Audio', subcategory='head/ear phones')
+    return render(request,'items/audios/headphones.html',{'phones':phones})
+
+
+def subwoofers(request):
+    woofers=Product.objects.filter(category__name='Audio', subcategory='subwoofers')
+    return render(request,'items/audios/woofers.html',{'woofers':woofers})
+
+
+
+ # COMPUTING
+
+def all_in_one(request):
+   all_in_ones=Product.objects.filter(category__name='Destops')
+   return render(request,'items/computing/all_in_one.html',{'all_in_ones':all_in_ones}) 
+
+
+def desktop(request):
+   desktops=Product.objects.filter(category__name='Destops')
+   return render(request,'items/computing/desktop.html',{'desktops':desktops})
+
+
+def computer_accessories(request):
+   accessories=Product.objects.filter(category__name='Computer_accessories')
+   return render(request,'items/computing/computing_accessories.html',{'accessories':accessories})
+
+ # Laptops
+
+def laptops(request):
+    laptop=Product.objects.filter(category__name='Laptops')
+    return render(request,'items/laptops/laptops.html',{'laptop':laptop})
+
+def hp_laptops(request):
+    hps=Product.objects.filter(brand='HP',category__name='Laptops')
+    return render(request, 'items/laptops/hp.html', {'hps': hps})
+
+def dell_laptops(request):
+    dells=Product.objects.filter(brand='DELL',category__name='Laptops')
+    return render(request, 'items/laptops/dell.html', {'dells': dells})
+
+
+def Mac_laptops(request):
+    macs=Product.objects.filter(brand='MAC',category__name='Laptops')
+    return render(request, 'items/laptops/mac.html', {'macs': macs})
+
+
+def asus_laptops(request):
+    asuses=Product.objects.filter(brand='ASUS',category__name='Laptops')
+    return render(request, 'items/laptops/asus.html', {'asuses': asuses})
+
+
+def lenovo_laptops(request):
+    lenovos=Product.objects.filter(brand='LENOVO',category__name='Laptops')
+    return render(request, 'items/laptops/lenovo.html', {'lenovos': lenovos})
+
 
 def computer_list(request):
     computers = Product.objects.filter(category__name='Computing')
     return render(request, 'items/computer_list.html', {'computers': computers})
 
-def garmentcare_list(request):
-    garments = Product.objects.filter(category__name='Garment Care')
-    return render(request, 'items/computer_list.html', {'cares': cares})
 
-def floorcare_list(request):
-    floors = Product.objects.filter(category__name='Floor Care')
-    return render(request, 'items/computer_list.html', {'floors': floors})
 
-def kitchen(request):
-    kitchens = Product.objects.filter(category__name='Floor Care')
-    return render(request, 'items/computer_list.html', {'kitchens': kitchens})
+
+
+# Mobiles & Tablets
 
 def mobile_tablets(request):
     mbs = Product.objects.filter(category__name='Mobile&Tablets')
     return render(request, 'items/phones&tablets.html', {'mbs': mbs})
+
+
+def samsung_phones(request):
+    samsungs=Product.objects.filter(brand='SAMSUNG',category__name='Mobile&Tablets',subcategory__name='Phones')
+    return render(request, 'items/mob&tabs/samsungs.html', {'samsungs':samsungs})
+
+
+def i_phones(request):
+    iphones=Product.objects.filter(brand='IPHONE',category__name='Mobile&Tablets',subcategory__name='Phones')
+    return render(request, 'items/mob&tabs/iphones.html', {'iphones':iphones})
+
+
+def oneplus_phones(request):
+    ones=Product.objects.filter(brand='ONEPLUS',category__name='Mobile&Tablets',subcategory__name='Phones')
+    return render(request, 'items/mob&tabs/oneplus.html', {'ones':ones})
+
+
+def oppo_phones(request):
+    oppos=Product.objects.filter(brand='OPPO',category__name='Mobile&Tablets',subcategory__name='Phones')
+    return render(request, 'items/mob&tabs/oppos.html', {'oppos':oppos})
+
+
+def xiaomi_phones(request):
+    xiaomis=Product.objects.filter(brand='XIAOMI',category__name='Mobile&Tablets',subcategory__name='Phones')
+    return render(request, 'items/mob&tabs/xiaomis.html', {'xiaomis':xiaomis})
+
+def realme_phones(request):
+    realmes=Product.objects.filter(brand='REALME',category__name='Mobile&Tablets',subcategory__name='Phones')
+    return render(request, 'items/mob&tabs/realmes.html', {'realmes':realmes})
+
+
+def huawei_phones(request):
+    huaweis=Product.objects.filter(brand='HUAWEI',category__name='Mobile&Tablets',subcategory__name='Phones')
+    return render(request, 'items/mob&tabs/huaweis.html', {'huaweis':huaweis})
+
+
+def nokia_phones(request):
+    nokias=Product.objects.filter(brand='NOKIA',category__name='Mobile&Tablets',subcategory__name='Phones')
+    return render(request, 'items/mob&tabs/nokias.html', {'nokias':nokias})
+
+
+def vivo_phones(request):
+    vivos=Product.objects.filter(brand='VIVO',category__name='Mobile&Tablets',subcategory__name='Phones')
+    return render(request, 'items/mob&tabs/vivos.html', {'vivos':vivos})
+
+
+
+# HOME & LIVING
+
+def floorcare_list(request):
+    floors = Product.objects.filter(category__name='Floor Care')
+    return render(request, 'items/floor_care.html', {'floors': floors})
+
+def kitchen(request):
+    kitchens = Product.objects.filter(category__name='Floor Care')
+    return render(request, 'items/kitchen.html', {'kitchens': kitchens})
+
+def fridges(request):
+    fridges = Product.objects.filter(category__name='Home&living', subcategory= 'fridges')
+    return render(request, 'items/home&living/fridges.html', {'fridges': fridges})
+
+def freezers(request):
+    freezers = Product.objects.filter(category__name='Home&living', subcategory= 'freezers')
+    return render(request, 'items/home&living/freezers.html', {'fridges': fridges})
+
+
+def cookers(request):
+    cookers = Product.objects.filter(category__name='Home&living', subcategory= 'cookers')
+    return render(request, 'items/home&living/cookers.html', {'cookers': cookers})
+
+
+
+
+def washing_machines(request):
+    washings = Product.objects.filter(category__name='Home&living', subcategory= 'washing machines')
+    return render(request, 'items/home&living/washing.html', {'washings': washings})
+
+
+def water_dispensers(request):
+    dispensers = Product.objects.filter(category__name='Home&living', subcategory= 'dispensers')
+    return render(request, 'items/home&living/dispensers.html', {'dispensers': dispensers})
+
+
+def vacuum_cleaners(request):
+    vacuums = Product.objects.filter(category__name='Home&living', subcategory= 'vacuum_cleaners')
+    return render(request, 'items/home&living/vacuums.html', {'vacuums': vacuums})
+
+def air_fryers(request):
+    fryers = Product.objects.filter(category__name='Home&living', subcategory= 'air_fryers')
+    return render(request, 'items/home&living/airfryers.html', {'fryers': fryers})
+
+def blenders(request):
+    blenders = Product.objects.filter(category__name='Home&living', subcategory= 'blenders')
+    return render(request, 'items/home&living/blenders.html', {'blenders': blenders})
+
+
+def juicers(request):
+    juicers = Product.objects.filter(category__name='Home&living', subcategory= 'juicers')
+    return render(request, 'items/home&living/juicers.html', {'juicers': juicers})
+
+def toasters(request):
+    toasters = Product.objects.filter(category__name='Home&living', subcategory= 'toasters')
+    return render(request, 'items/home&living/toasters.html', {'toasters': toasters})
+
+def kettles(request):
+    kettles = Product.objects.filter(category__name='Home&living', subcategory= 'electric_kettles')
+    return render(request, 'items/home&living/kettles.html', {'kettles': kettles})
+
+def coffee_makers(request):
+    coffees = Product.objects.filter(category__name='Home&living', subcategory= 'coffee_makers')
+    return render(request, 'items/home&living/coffees.html', {'coffees': coffees})
+
+def food_processors(request):
+    processors = Product.objects.filter(category__name='Home&living', subcategory= 'processors')
+    return render(request, 'items/home&living/processors.html', {'processors': processors})
+
+
+# Garment Care
+
+def garmentcare_list(request):
+    cares = Product.objects.filter(category__name='Garment Care')
+    return render(request, 'items/garment_care.html', {'cares': cares})
+
+
+def iron_boxes(request):
+    irons = Product.objects.filter(category__name='Home&living', subcategory= 'iron_boxes')
+    return render(request, 'items/garment_care/irons.html', {'irons':irons})
+
+
+
+ # Waste management
+
+def dustbins(request):
+    bins = Product.objects.filter(category__name='Home&living', subcategory= 'bins')
+    return render(request, 'items/home&living/bins.html', {'bins': bins}) 
+
+
+
+ # Personal Care
+
+def female_grooming(request):
+    females = Product.objects.filter(category__name='Personal care', subcategory = 'female grooming')
+    return render(request, 'items/female_grooming.html', {'females': females})
+
+
+def male_grooming(request):
+    males = Product.objects.filter(category__name='Personal care', subcategory = 'male grooming')
+    return render(request, 'items/male_grooming.html', {'males': males})
+
+
+def dryers_straighteners(request):
+    dryers = Product.objects.filter(category__name='Personal care', subcategory = 'dryers&straighteners')
+    return render(request, 'items/dryers_straighteners.html', {'dryers': dryers})
+
+
+def toothbrush(request):
+    brushes = Product.objects.filter(category__name='Personal care', subcategory = 'toothbrush')
+    return render(request, 'items/toothbrush.html', {'brushes': brushes})
+
+
+
+# Gaming
+
+def ps5(request):
+    ps5s=Product.objects.filter(category_name='Gaming', subcategory='playstations')
+    return render(request,'items/gaming/playtations.html', {'ps5sp':ps5s})
+
+def play_station_consoles(request):
+    playstation_consoles = Product.objects.filter(category__name='Gaming', subcategory = 'playstation consoles')
+    return render(request, 'items/playstationconsoles.html', {'playstation_consoles': playstation_consoles})
+
+
+def xbox_consoles(request):
+    xbox_consoles = Product.objects.filter(category__name='Gaming', subcategory = 'xbox consoles')
+    return render(request, 'items/xboxconsoles.html', {'playstation_consoles': xbox_consoles})
+
+def gaming_controllers(request):
+    controllers = Product.objects.filter(category__name='Gaming', subcategory = 'gaming_controllers')
+    return render(request, 'items/gaming_controllers.html.html', {'controllers': controllers})
 
