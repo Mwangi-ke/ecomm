@@ -4,12 +4,12 @@ from . import views
 
 urlpatterns = [
     path('', views.shop_page, name='shop'),
-    path(
-        'product/<product_id>', views.product_details, name='product-details'),
+    path('product/<product_id>', views.product_details, name='product-details'),
     path('shop/<int:category_id>/', views.shop_page, name='shop'),
     path('wishlist/', views.wishlist, name='wishlist'),
     path('search/', views.search_products, name='search_products'),
     path('add_item/', views.add_item ,name='add_item'),
+    path('sort-products/', views.sort_products_view, name='sort_products'),
     path('all_brands/', views.all_brands ,name='all_brands'),
     path('tv_list/', views.tv_list, name='tv_list'),
     path('audio_list/', views.audio_list, name='audio_list'),

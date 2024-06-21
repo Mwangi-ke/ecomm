@@ -138,6 +138,17 @@ def search_products(request):
 
 
 
+
+def sort_products_view(request):
+    sort_by = request.GET.get('sort_by', 'name')  # Default to sorting by name if no criteria is provided
+    price_range = request.GET.get('price_range', 'all')  # Default to 'all' if no price range is provided
+    products = Product.sort_products(sort_by=sort_by, price_range=price_range)
+    return render(request, 'shop/sorted_products.html', {'products': products})
+
+
+
+
+
 def add_item(request):
     if request.method == 'POST':
         form = Form(request.POST, request.FILES)

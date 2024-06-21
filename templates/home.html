@@ -5,62 +5,6 @@
 <section id="home-section" class="hero">
 
 
-
-  
-    <style>
-      .navbar-custom {
-        background-color: black  !important; /* Dark Green */
-        padding: 10px 0;
-      }
-      .navbar-custom .nav-link {
-        color: white !important; /* White text */
-        font-size: 16px;
-        padding: 15px 20px;
-        transition: color 0.3s ease;
-      }
-      .navbar-custom .nav-link:hover {
-        color: #66ff66 !important; /* Light Green on hover */
-      }
-      .navbar-custom .dropdown-menu {
-        background-color: #003300; /* Darker Green */
-        border: none;
-        border-radius: 0;
-      }
-      .navbar-custom .dropdown-menu .dropdown-item {
-        color: #ffffff;
-        transition: background-color 0.3s ease;
-      }
-      .navbar-custom .dropdown-menu .dropdown-item:hover {
-        background-color: #004d00; /* Slightly lighter Dark Green */
-      }
-
-          .search-form {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start; /* Align to the left */
-      margin: 20; /* Ensure no margin */
-      padding: -20; /* Ensure no padding */
-    }
-
-      .search-form input[type="text"] {
-        width: 400px; /* Adjust the width as needed */
-        padding: 10px; /* Add padding for a better look */
-        border: 1px solid #ccc; /* Optional: Add border */
-        border-radius: 4px; /* Optional: Add border radius */
-        margin-right: 10px; /* Add space between input and button */
-      }
-
-      
-      .search-form input[type="text"]:focus {
-        border-color: #00cc00; /* Slightly darker Light Green on focus */
-      }
-      .search-form button {
-        background-color: transparent;
-        border: none;
-        outline: none;
-      }
-    </style>
-
   
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-dark" id="ftco-navbar">
       <form action="{% url 'search' %}" method="get" class="search-form">
@@ -247,18 +191,49 @@
         </div>
       </div>
     </div>
-    <div class="slider-item" style="background-image: url({% static 'images/bg18.jpg' %});">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
+    <div class="slider-item" style="position: relative;">
+      <video autoplay muted loop id="background-video" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <source src="{% static 'videos/Airfryer_Background.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="overlay" style="position: absolute; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 0;"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
           <div class="col-sm-12 ftco-animate text-center">
             <h1 class="mb-2"></h1>
             <h2 class="subheading mb-4"></h2>
-  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="slider-item" style="background-image: url({% static 'images/output.png' %});">
+    <div ></div>
+    <div class="container">
+      <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+        <div class="col-sm-12 ftco-animate text-center">
+          <h1 class="mb-2"></h1>
+          <h2 class="subheading mb-4"></h2>
 </div>
 </div>
-  </div>
+</div>
+</div>
+
+
+  <div class="slider-item" style="background-image: url({% static 'images/output.png' %});">
+    <div ></div>
+    <div class="container">
+      <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+        <div class="col-sm-12 ftco-animate text-center">
+          <h1 class="mb-2"></h1>
+          <h2 class="subheading mb-4"></h2>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 
@@ -274,7 +249,7 @@
           <div class="media-body">
             <h3 class="heading">Fast Delivery</h3>
             <span>1-2 hrs in Nairobi</span>
-            <span>Next Day delivery outside Nairobi</span>
+            <p>Next Day delivery outside Nairobi</p>
           </div>
         </div>
       </div>
@@ -400,7 +375,7 @@
       <div class="col-md-7 heading-section ftco-animate text-center">
         <span class="subheading">Testimony</span>
         <h2 class="mb-4">Our satisfied customer says</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+        <p>Shop with us and experience the seamless blend of technology and comfort.</p>
       </div>
     </div>
     <div class="row ftco-animate">

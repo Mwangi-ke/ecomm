@@ -10011,3 +10011,86 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+
+    .navbar-custom {
+      background-color: black  !important; /* Dark Green */
+      padding: 10px 0;
+    }
+    .navbar-custom .nav-link {
+      color: white !important; /* White text */
+      font-size: 16px;
+      padding: 15px 20px;
+      transition: color 0.3s ease;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #66ff66 !important; /* Light Green on hover */
+    }
+    .navbar-custom .dropdown-menu {
+      background-color: #003300; /* Darker Green */
+      border: none;
+      border-radius: 0;
+    }
+    .navbar-custom .dropdown-menu .dropdown-item {
+      color: #ffffff;
+      transition: background-color 0.3s ease;
+    }
+    .navbar-custom .dropdown-menu .dropdown-item:hover {
+      background-color: #004d00; /* Slightly lighter Dark Green */
+    }
+
+        .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align to the left */
+    margin: 20; /* Ensure no margin */
+    padding: -20; /* Ensure no padding */
+  }
+
+    .search-form input[type="text"] {
+      width: 400px; /* Adjust the width as needed */
+      padding: 10px; /* Add padding for a better look */
+      border: 1px solid #ccc; /* Optional: Add border */
+      border-radius: 4px; /* Optional: Add border radius */
+      margin-right: 10px; /* Add space between input and button */
+    }
+
+    
+    .search-form input[type="text"]:focus {
+      border-color: #00cc00; /* Slightly darker Light Green on focus */
+    }
+    .search-form button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }    
+
+
+
+    .sort-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+  }
+  
+  .sort-form label {
+      flex-basis: 100%;
+      font-weight: bold;
+  }
+  
+  .sort-form select, .sort-form button {
+      flex-basis: 45%;
+      padding: 5px;
+      margin-bottom: 10px;
+  }
+  
+  .sort-form button {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+  

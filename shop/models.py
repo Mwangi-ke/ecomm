@@ -4,7 +4,6 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=30)
-    photo = models.ImageField(upload_to='products_category')
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -35,6 +34,27 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+
+    @classmethod
+    def sort_products(cls, sort_by='name', price_range='all'):
+        products = cls.objects.all()
+
+        if sort_by == 'brand':
+            products = products.order_by('brand__name')
+        elif sort_by == 'category':
+            products = products.order_by('category__name')
+        elif sort_by == 'price':
+            if price_range == 'low':
+                products = products.filter(price__lt=100)
+            elif price_range == 'mid':
+                products = products.filter(price__gte=100, price__lt=500)
+            elif price_range == 'high':
+                products = products.filter(price__gte=500)
+            products = products.order_by('price')
+        else:
+            products = products.order_by('name')
+
+        return products
 
 
 class TV(Product):
