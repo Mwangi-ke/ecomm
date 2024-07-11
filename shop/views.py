@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import Category, Product
 from django.db.models import Q
 from.utils import calculate_discounted_price
@@ -59,6 +59,10 @@ def shop_page(request):
 def product_details(request, product_id):
     product_details = Product.objects.get(id=product_id)
     related_products = Product.objects.filter(category__name=product_details.category.name).exclude(id=product_id)
+ 
+    for product in related_products:
+        product.new_price= product.price * 1.1
+        
     context = {
         'product': product_details,
         'related_products': related_products,
@@ -488,3 +492,10 @@ def gaming_controllers(request):
     controllers = Product.objects.filter(category__name='Gaming', subcategory = 'gaming_controllers')
     return render(request, 'items/gaming_controllers.html.html', {'controllers': controllers})
 
+
+
+
+def category_view(request,category_name):
+    categorys=get_object_or_404(Category,name=category_name)
+    products=Product.objects.filter(category=categorys)
+    return render(request,'shop/shop.html',{'category':categorys,'products':products})
